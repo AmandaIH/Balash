@@ -1,5 +1,13 @@
 ---
 import Mainlayout from '../layouts/Mainlayout.astro';
+const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/images", {
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNreXluamF6amR5cXBuamJyYmdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3MzI2MDgsImV4cCI6MjA0OTMwODYwOH0.Xp8pMWZc50qLfkL7cMZ5HSKnxF52xnYhKdtQzCV1WzU"
+    }
+}).then(res=>res.json());
 ---
 
 <Mainlayout></Mainlayout>
+
+
