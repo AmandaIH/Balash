@@ -1,6 +1,7 @@
 <header>
-    <ul>
-    <li><a href="index.astro"><img src="/public/logo/logo_sort.svg" alt="Logo"></a></li>
+    
+    <div class="logo"><a href="index.astro"><img src="/public/logo/logo_sort.svg" alt="Logo"></a></div>
+    <ul class="nav-items">
     <li><a class="about" href="about.astro">ABOUT</a></li>
     <li><a class="services" href="services.astro">SERVICES</a></li>
     <li><a class="social" href="socialcalendar.astro">SOCIAL CALENDAR</a></li>
@@ -10,17 +11,24 @@
 <style>
     header {
         margin: 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        flex-shrink: 0; 
     }
 img {
     width: 10rem;
 }
-ul {
+ul.nav-items {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    list-style: none;
+   list-style: none;
     gap: 2.5rem;
-    margin-top: 2%;    
+    margin-top: 2%;   
+    width: 100%; 
+    justify-content: flex-end;
 }
 
 li {
@@ -29,10 +37,6 @@ li {
   font-family: "Roboto Mono", monospace;
   font-style: normal;
   font-size: 1.5rem;
-}
-
-li:first-child {
-    margin-right: 13em; 
 }
 
 a {
