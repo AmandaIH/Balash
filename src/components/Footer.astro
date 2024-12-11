@@ -1,0 +1,61 @@
+---
+import "../css/global.css"
+---
+<footer>
+  <div class="footer-container">
+    <div class="footer-info">
+      <p>Instagram: <a href="https://www.instagram.com/balash.events" target="_blank">balash.events</a></p>
+      <p>Kontakt: <a href="mailto:balashaps@gmail.com">balashaps@gmail.com</a></p>
+    </div>
+    <div class="footer-img">
+        <img src="/public/logo/illustration.webp" alt="illustration">
+    </div>
+    <div class="footer-copyright">
+      <p>© 2024 Balash Events ApS</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+  padding: 0px;
+  background-color: #fcfcfc;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Styling af tekstindhold */
+.footer-info {
+  text-align: left;
+  align-self: flex-end; 
+}
+
+.footer-info p {
+  margin: 5px 0;
+}
+
+.footer-info a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Styling af billedet */
+.footer-img {
+  max-width: 150px; 
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Copyright styling */
+.footer-copyright {
+  font-size: 0.8rem;
+  align-self: flex-start; 
+  text-align: left;
+}
+</style>
