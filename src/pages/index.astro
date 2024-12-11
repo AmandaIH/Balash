@@ -1,26 +1,26 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../css/global.css";
-
+import Footer from '../components/Footer.astro';
 
 
 
 import Newsletterbox from '../components/Newsletterbox.astro';
 ---
 
-<MainLayout>
-<div class="container">
+<Mainlayout>
+<Header></Header>
+<section class="container">
 <video src="">VIDEO</video>
 <img class="drinks" src="/public/img_mobile/forside_drinks_mobile.webp" alt="Drinks">
 <img class="soho" src="/public/img_mobile/forside_soho_mobile.webp" alt="På Soho">
 <img class="suppe" src="/public/img_mobile/forside_suppe_mobile.webp" alt="En suppe">
 <img class="fisk" src="/public/img/forside_fish.webp" alt="Fisk">
 </div>
-<Newsletterbox />
-</MainLayout>
+<Newsletterbox></Newsletterbox>
+</Mainlayout>
 
 <style>
-
 
 
 @media (max-width: 500px) {
@@ -29,7 +29,7 @@ img {
 	margin-top: 0%;
 	margin-bottom: 5%;
 }
-	body {
+	.container {
 	margin: 13%;
 }
 }
@@ -51,16 +51,18 @@ flex-wrap: wrap;
 	margin-bottom: 5%;
 }
 
-body {
+.container {
 	margin: 13%;
+	max-width: 799px;
 }
 
 }
 
 @media (min-width: 800px) {
 	
-	body {
-	margin: 3%;
+	.container {
+	margin: 13%;
+	max-width: 1410px;
 }
 	.container img {
         width: 100%; 
@@ -71,7 +73,6 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
-	width: 100%;
 	gap: 2%;
 }
 .drinks {
