@@ -1,4 +1,5 @@
 ---
+import TidligereEvents from '../components/TidligereEvents.astro';
 import Mainlayout from '../layouts/Mainlayout.astro';
 const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/images", {
     method: "GET",
@@ -8,6 +9,9 @@ const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/image
 }).then(res=>res.json());
 ---
 
-<Mainlayout></Mainlayout>
+<Mainlayout> 
+    <TidligereEvents></TidligereEvents>
+</Mainlayout>
+
 
 
