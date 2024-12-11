@@ -1,0 +1,25 @@
+---
+
+const {img, place, date} = Astro.props
+
+console.log(img)
+---
+
+<article>
+    <img src=`/img/${img}` alt={place}>
+    <header>
+        <h3>{place}</h3>
+        <p>{date}</p>
+    </header>
+</article>
+
+<style>
+    article {
+        background-color: red;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

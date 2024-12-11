@@ -1,6 +1,5 @@
 ---
-import Mainlayout from '../layouts/Mainlayout.astro';
-import Header from "../components/Header.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import "../css/global.css";
 
 
@@ -9,8 +8,7 @@ import "../css/global.css";
 import Newsletterbox from '../components/Newsletterbox.astro';
 ---
 
-<Mainlayout>
-<Header></Header>
+<MainLayout>
 <div class="container">
 <video src="">VIDEO</video>
 <img class="drinks" src="/public/img_mobile/forside_drinks_mobile.webp" alt="Drinks">
@@ -18,8 +16,8 @@ import Newsletterbox from '../components/Newsletterbox.astro';
 <img class="suppe" src="/public/img_mobile/forside_suppe_mobile.webp" alt="En suppe">
 <img class="fisk" src="/public/img/forside_fish.webp" alt="Fisk">
 </div>
-<Newsletterbox></Newsletterbox>
-</Mainlayout>
+<Newsletterbox />
+</MainLayout>
 
 <style>
 
