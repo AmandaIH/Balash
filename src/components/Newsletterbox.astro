@@ -1,5 +1,4 @@
-  <section class="newsletter" id="newsletter">
-    <button class="close-button" aria-label="Close newsletter">&times;</button>
+<section class="newsletter">
     <header>
       <h1>NEWSLETTER</h1>
     </header>
@@ -23,87 +22,59 @@
     </footer>
   </section>
 
-  
 
   <style>
-    .newsletter {
-      position: relative; /* For at placere luk-knappen korrekt */
-      font-family: Arial, sans-serif;
-      background-color: #FFFFFF;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    
-    .newsletter h1 {
-      font-size: 24px;
-      color: #000000;
-      text-align: left;
-    }
-    
-    .newsletter p {
-      font-size: 16px;
-      color: #000000;
-      text-align: left;
-    }
-    
-    .newsletter-form {
-      margin-top: 20px;
-      text-align: center;
-    }
-    
-    .email-input {
-      width: calc(100% - 100px);
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #000000;
-      text-align: left;
-    }
-    
-    .subscribe-button {
-      width: calc(100% - 84px);
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #000000;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-    }
-    
-    .subscribe-button:hover {
-      background-color: #1f1d1d;
-      border: #000000;
-    }
+  .newsletter {
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  padding: 20px;
   
-    .logo_hand p {
-      text-align: center;
-    }
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.newsletter h1 {
+  font-size: 24px;
+  color: #000000;
+  text-align: left;
+}
+
+.newsletter p {
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+}
+
+.newsletter-form {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  gap: 5px; 
+}
+
+.email-input,
+.subscribe-button {
+  width: 100%; 
+  padding: 10px;
+  font-size: 16px;
   
-    /* Styling til luk-knap */
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #000000;
-      transition: color 0.3s ease;
-    }
-  
-    .close-button:hover {
-      color: #c6c6c6;
-    }
-  </style>
-  
-  <script>
-    // JavaScript til at lukke nyhedsbrevet
-    document.querySelector('.close-button').addEventListener('click', () => {
-      const newsletter = document.getElementById('newsletter');
-      newsletter.style.display = 'none'; // Skjuler nyhedsbrevet
-    });
-  </script>
+  border: 1px solid #000000;
+  box-sizing: border-box; 
+}
+
+.subscribe-button {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.subscribe-button:hover {
+  background-color: #4b4b4b;
+}
+
+.logo_hand p {
+  text-align: center;
+}
+</style>
