@@ -6,34 +6,32 @@
   
     <!-- Burger menu -->
     <button id="burger-menu" class="burger-menu" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  
-    <!-- Overlay -->
-    <div id="menu-overlay"></div>
-  
-    <!-- Navigation -->
-    <ul class="nav-items">
-      <li><a class="about" href="about.astro">ABOUT</a></li>
-      <li><a class="services" href="services.astro">SERVICES</a></li>
-      <li><a class="social" href="socialcalendar.astro">SOCIAL CALENDAR</a></li>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div id="menu-overlay"></div>
+      <ul class="nav-items">
+    <li><a class="about" href="about.astro">ABOUT</a></li>
+    <li><a class="services" href="services.astro">SERVICES</a></li>
+    <li><a class="social" href="socialcalendar.astro">SOCIAL CALENDAR</a></li>
     </ul>
-  </header>
-  
-  <style>
-  /* Header styling */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2%;
-    position: relative;
-  }
-  
-  /* Logo styling */
-  .logo {
+</header>
+
+<style>
+    header {
+        margin: 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .logo {
+        flex-shrink: 0; 
+    }
+img {
     width: 10rem;
   }
   
@@ -97,7 +95,7 @@
     }
   
     .nav-items {
-      display: none;
+      /* display: none; */
       flex-direction: column;
       list-style: none;
       gap: 5rem;
@@ -120,7 +118,7 @@
     }
   
     #menu-overlay {
-      display: none;
+      /* display: none; */
       position: fixed;
       top: 0;
       left: 0;

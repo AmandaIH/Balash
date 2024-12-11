@@ -1,17 +1,40 @@
 ---
-import TidligereEvents from '../components/TidligereEvents.astro';
-import Mainlayout from '../layouts/Mainlayout.astro';
-const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/images", {
+import MainLayout from '../layouts/Mainlayout.astro';
+import EventCard from '../components/EventCard.astro';
+const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/socialcalendar", {
     method: "GET",
     headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNreXluamF6amR5cXBuamJyYmdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3MzI2MDgsImV4cCI6MjA0OTMwODYwOH0.Xp8pMWZc50qLfkL7cMZ5HSKnxF52xnYhKdtQzCV1WzU"
     }
 }).then(res=>res.json());
+
+console.log(data)
 ---
 
-<Mainlayout> 
-    <TidligereEvents></TidligereEvents>
-</Mainlayout>
+<MainLayout> 
+    <section>
+        <ul>
+        {data.map( obj => {
+            return <li><EventCard {...obj} /></li>
+        })}
 
+        </ul>
+        
+
+        <p> Tilmeld dig vores nyhedsbrev her og vær first in line når vi sender nyt om næste spændende pop-up fra Balash.</p>
+    </section>
+</MainLayout>
+
+<style>
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+    p{
+        
+    }
+</style>
 
 
