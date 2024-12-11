@@ -1,6 +1,6 @@
 ---
 import "../css/global.css"
- import Header from '../layouts/Mainlayout.astro';
+import Header from "../components/Header.astro"
 ---
 
 <!doctype html>
@@ -17,8 +17,10 @@ import "../css/global.css"
 </head>
 	<body>
 		<Header />
+		
 		<main>
 			<slot />
 		</main>
+		<script src="../js/burgermenu.js" />
 	</body>
 </html>

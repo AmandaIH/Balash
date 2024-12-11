@@ -1,55 +1,28 @@
-<script>
-// JavaScript-funktionen er nu sikret med nul-tjek.
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector("#burger-menu");
-  const navItems = document.querySelector(".nav-items");
-  const overlay = document.querySelector("#menu-overlay");
+---
 
-  if (burgerMenu && navItems && overlay) {
-    burgerMenu.addEventListener("click", () => {
-      navItems.classList.toggle("active");
-      overlay.classList.toggle("active");
-          burgerMenu.classList.toggle("open");
-    });
-
-    overlay.addEventListener("click", () => {
-          navItems.classList.remove("active");
-          overlay.classList.remove("active");
-          burgerMenu.classList.remove("open");
-        });
-
-  } else {
-    console.warn("Burger menu, navigation items, or overlay are not found in the DOM.");
-  }
-});
-
-</script>
+---
 
 <header>
-    
-<<<<<<< HEAD
-    <div class="logo"><a href="index.astro"><img src="/public/logo/logo_sort.svg" alt="Logo"></a></div>
+    <div class="logo"><a href="/"><img src="/public/logo/logo_sort.svg" alt="Logo"></a></div>
     <button id="burger-menu" class="burger-menu" aria-label="Toggle navigation">
         <span></span>
         <span></span>
         <span></span>
       </button>
-<<<<<<< HEAD
-=======
+
+
     <div class="logo"><a href="/"><img src="/public/logo/logo_sort.svg" alt="Logo"></a></div>
->>>>>>> socialcalendar
+
     <ul class="nav-items">
     <li><a class="about" href="/about">ABOUT</a></li>
     <li><a class="services" href="/services">SERVICES</a></li>
     <li><a class="social" href="/socialcalendar">SOCIAL CALENDAR</a></li>
-=======
       
       <div id="menu-overlay"></div>
       <ul class="nav-items">
-    <li><a class="about" href="about.astro">ABOUT</a></li>
-    <li><a class="services" href="services.astro">SERVICES</a></li>
-    <li><a class="social" href="socialcalendar.astro">SOCIAL CALENDAR</a></li>
->>>>>>> 0e35eb160b28ffa20bcde1a32fb8b9d734b4adaf
+    <li><a class="about" href="/about">ABOUT</a></li>
+    <li><a class="services" href="/services">SERVICES</a></li>
+    <li><a class="social" href="/socialcalendar">SOCIAL CALENDAR</a></li>
     </ul>
 </header>
 
@@ -186,3 +159,29 @@ ul.nav-items a:hover {
 
 </style>
 
+<script>
+// JavaScript-funktionen er nu sikret med nul-tjek.
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerMenu = document.querySelector("#burger-menu");
+  const navItems = document.querySelector(".nav-items");
+  const overlay = document.querySelector("#menu-overlay");
+
+  if (burgerMenu && navItems && overlay) {
+    burgerMenu.addEventListener("click", () => {
+      navItems.classList.toggle("active");
+      overlay.classList.toggle("active");
+          burgerMenu.classList.toggle("open");
+    });
+
+    overlay.addEventListener("click", () => {
+          navItems.classList.remove("active");
+          overlay.classList.remove("active");
+          burgerMenu.classList.remove("open");
+        });
+
+  } else {
+    console.warn("Burger menu, navigation items, or overlay are not found in the DOM.");
+  }
+});
+
+</script>
