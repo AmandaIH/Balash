@@ -11,13 +11,13 @@ import Newsletterbox from '../components/Newsletterbox.astro';
 
 <Mainlayout>
 <Header></Header>
-<div class="container">
+<section class="container">
 <video src="">VIDEO</video>
 <img class="drinks" src="/public/img_mobile/forside_drinks_mobile.webp" alt="Drinks">
 <img class="soho" src="/public/img_mobile/forside_soho_mobile.webp" alt="På Soho">
 <img class="suppe" src="/public/img_mobile/forside_suppe_mobile.webp" alt="En suppe">
 <img class="fisk" src="/public/img/forside_fish.webp" alt="Fisk">
-</div>
+</section>
 <Newsletterbox></Newsletterbox>
 <Footer></Footer>
 </Mainlayout>
@@ -32,7 +32,7 @@ img {
 	margin-top: 0%;
 	margin-bottom: 5%;
 }
-	body {
+	.container {
 	margin: 13%;
 }
 }
@@ -54,7 +54,7 @@ flex-wrap: wrap;
 	margin-bottom: 5%;
 }
 
-body {
+.container {
 	margin: 13%;
 }
 
@@ -62,8 +62,8 @@ body {
 
 @media (min-width: 800px) {
 	
-	body {
-	margin: 3%;
+	.container {
+	margin: 5%;
 }
 	.container img {
         width: 100%; 
