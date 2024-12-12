@@ -17,16 +17,14 @@ import "../css/global.css"
 </footer>
 
 <style>
-  footer {
-  padding: 0px;
-  background-color: #fcfcfc;
-}
-
 .footer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 5%;
+  font-family: "Roboto Mono", monospace;
+  font-size: 9px;
 }
 
 /* Styling af tekstindhold */
@@ -49,13 +47,29 @@ import "../css/global.css"
   max-width: 150px; 
   height: auto;
   display: flex;
-  justify-content: flex-start;
+  align-self: flex-end; 
 }
 
 /* Copyright styling */
 .footer-copyright {
-  font-size: 0.8rem;
   align-self: flex-start; 
   text-align: left;
 }
+
+@media (min-width: 800px) {
+.footer-copyright {
+  align-self: center;
+}
+
+.footer-container {
+  margin: 2%;
+  font-size: 12px;
+}
+.footer-img {
+  max-width: 200px; 
+}
+    
+}
+
+
 </style>
