@@ -4,6 +4,8 @@ const {data} = Astro.props;
 
 ---
 
+
+
 <article>
     <img src=`/img/${data.img}` alt={data.place}>
     <header>
@@ -37,6 +39,7 @@ const {data} = Astro.props;
 
     article:hover .hover_info {
     display: flex; 
+    border-radius: 0;
 }
     
     @media (min-width: 800px) {
@@ -63,7 +66,7 @@ const {data} = Astro.props;
     color: black;
     align-items: center;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 0;
     position: absolute;
     font-size: 12px;
     justify-content: center;
