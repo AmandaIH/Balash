@@ -1,24 +1,70 @@
 ---
 
-const {img, place, date} = Astro.props
+const {data} = Astro.props;
 
 ---
 
 <article>
-    <img src=`/img/${img}` alt={place}>
+    <img src=`/img/${data.img}` alt={data.place}>
     <header>
-        <h3>{place}</h3>
-        <p>{date}</p>
+        <h3>{data.place}</h3>
+        <p>{data.date}</p>
     </header>
 </article>
 
 <style>
+    body {
+        background-color: #fcfcfc;
+    }
+    
     article {
-        background-color: rgb(117, 107, 107);
+       
     }
 
     header {
         display: flex;
         justify-content: space-between;
+    }
+    
+    @media (min-width: 800px) {
+    h3 {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-size: 20px;
+    }
+    
+    p {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-size: 15px;
+    }
+    }
+
+    @media (min-width: 501px) and (max-width: 799px) {
+        h3 {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-size: 17px;
+    }
+    
+    p {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-size: 13px;
+    } 
+    }
+
+    @media (max-width: 500px) {
+    h3 {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-size: 15px;
+    }
+    
+    p {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-size: 9px;
+    } 
     }
 </style>

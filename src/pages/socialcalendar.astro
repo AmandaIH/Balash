@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import MainLayout from '../layouts/Mainlayout.astro';
 import EventCard from '../components/EventCard.astro';
 const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/socialcalendar", {
@@ -7,17 +8,16 @@ const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/socia
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNreXluamF6amR5cXBuamJyYmdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3MzI2MDgsImV4cCI6MjA0OTMwODYwOH0.Xp8pMWZc50qLfkL7cMZ5HSKnxF52xnYhKdtQzCV1WzU"
     }
 }).then(res=>res.json());
-
-console.log(data)
 ---
 
 <MainLayout> 
+    <h1>Social calendar</h1>
     <section>
         <ul>
-        {data.map( obj => {
-            return <li><EventCard {...obj} /></li>
-        })}
-
+        {data.map((data) => {
+            return <EventCard data={data} />;
+        })
+    }
         </ul>
         
 
@@ -29,11 +29,30 @@ console.log(data)
 
     ul {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
     }
-    p{
-        
+
+    @media (max-width: 799px) {
+        ul {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 800px) {
+        ul {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    section{
+      margin: 10%;  
+    }
+
+    h1 {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 10%;
+    margin-top: 5%;
     }
 </style>
 
