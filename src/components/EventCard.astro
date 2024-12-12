@@ -9,6 +9,7 @@ const {data} = Astro.props;
     <header>
         <h3>{data.place}</h3>
         <p>{data.date}</p>
+        <p class="hover_info">{data.hover}</p>
     </header>
 </article>
 
@@ -25,6 +26,21 @@ const {data} = Astro.props;
         display: flex;
         justify-content: space-between;
     }
+
+    .hover_info {
+    display: none; 
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 10;
+    font-size: 12px;
+    }
+
+    article:hover .hover_info {
+    display: block; 
+}
     
     @media (min-width: 800px) {
     h3 {
@@ -68,3 +84,23 @@ const {data} = Astro.props;
     } 
     }
 </style>
+<script>
+
+document.querySelectorAll("article").forEach((article) => {
+    const hoverInfo = article.querySelector(".hover_info");
+
+    article.addEventListener("mouseenter", async () => {
+        const hoverData = await fetchHoverData(); 
+        hoverInfo.textContent = hoverData;
+    });
+});
+
+
+async function fetchHoverData() {
+    const response = await fetch("/api/get-hover-data"); 
+    const data = await response.json();
+    return data.hover; 
+}
+
+
+</script>
