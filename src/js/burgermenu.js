@@ -1,22 +1,16 @@
-// JavaScript-funktionen er nu sikret med nul-tjek.
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector("#burger-menu");
-  const navItems = document.querySelector(".nav-items");
-  const overlay = document.querySelector("#menu-overlay");
+const burger = document.querySelector(".burger");
+const nav = document.querySelector("nav");
+const menu = document.querySelector(".menu");
+const links = document.querySelectorAll(".menu li a");
 
-  if (burgerMenu && navItems && overlay) {
-    burgerMenu.addEventListener("click", () => {
-      navItems.classList.toggle("active");
-      overlay.classList.toggle("active");
-      burgerMenu.classList.toggle("open");
-    });
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  nav.classList.toggle("active");
+});
 
-    overlay.addEventListener("click", () => {
-      navItems.classList.remove("active");
-      overlay.classList.remove("active");
-      burgerMenu.classList.remove("open");
-    });
-  } else {
-    console.warn("Burger menu, navigation items, or overlay are not found in the DOM.");
-  }
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  });
 });
