@@ -112,26 +112,5 @@ flex-wrap: wrap;
 </style>
 
 <script>
-	if (typeof window !== 'undefined') {
-	  
-	  if (!localStorage.getItem('hasSeenFirstFeature')) {
-		
-		const firstFeatureContainer = document.getElementById('first-feature-container');
-		
-		
-		setTimeout(() => {
-		  if (firstFeatureContainer) {
-			firstFeatureContainer.style.display = 'none';
-		  }
-		 
-		  localStorage.setItem('hasSeenFirstFeature', 'true');
-		}, 5000); 
-	  } else {
-		
-		const firstFeatureContainer = document.getElementById('first-feature-container');
-		if (firstFeatureContainer) {
-		  firstFeatureContainer.style.display = 'none';
-		}
-	  }
-	}
+
   </script>
