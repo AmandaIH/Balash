@@ -1,88 +1,117 @@
-<section class="newsletter">
-    <header>
-      <h1>NEWSLETTER</h1>
-    </header>
-    <main>
-      <p>
-        Tilmeld dig vores nyhedsbrev her og vær first in line, når vi sender nyt om næste spændende pop-up fra Balash.
-      </p>
-      <form action="/subscribe" method="POST" class="newsletter-form">
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="EMAIL" 
-          required 
-          class="email-input" 
-        />
-        <button type="submit" class="subscribe-button">SUBSCRIBE</button>
-      </form>
-    </main>
-    <footer class="logo_hand">
-      <p>LOGO AF HÅND</p>
-    </footer>
-  </section>
+<div id="newsletter-popup" class="hidden">
+  <div class="popup-content">
+    <!-- &#215 er kode for gange-tegn -->
+    <button class="close-popup" aria-label="Close popup">&#215</button> 
+    <h2>NEWSLETTER</h2>
+    <p>Tilmeld dig vores nyhedsbrev her og vær first in line når vi sender nyt om næste spændende pop-up fra Balash Events.</p>
+    <form id="newsletter-form">
+      <input type="email" placeholder="EMAIL" required>
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+  </div>
+</div>
 
+<div class="knap">
+  <button>NEWSLETTER</button>
+</div>
+
+<script>
+    const knap = document.querySelector('.knap');
+    const newsletter = document.getElementById('newsletter-popup');
+        const closePopup = document.querySelector('.close-popup');
+
+    knap?.addEventListener('click', toggleNewsletter);
+     closePopup?.addEventListener('click', toggleNewsletter);
+
+    function toggleNewsletter() {
+      newsletter?.classList.toggle('hidden');
+    }
+
+
+
+
+</script>
 
   <style>
-  .newsletter {
-    font-family: Arial, sans-serif;
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
+   
+   .hidden {
+      display: none !important;
+    }
 
-    max-width: 400px;
-    margin: 0 auto;
-  }
+    /* NEWSLETTER BOX STYLING */
+    #newsletter-popup{
+      position: sticky;
   
-  .newsletter h1 {
-    font-size: 24px;
-    color: #000000;
-    text-align: left;
-  }
-  
-  .newsletter p {
-    font-size: 16px;
-    color: #000000;
-    text-align: left;
-  }
-  
-  .newsletter-form {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
+      width: fit-content;
+      top: 25%; 
+      z-index: 10;
+      left: 30%;
+      margin-top: -20rem;
+ 
+    }
 
+    .popup-content{
+      background-color: white;
+      width: 700px;
+      padding: 2rem;
+
+    font-family: "Roboto Mono", monospace;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
   
-  .email-input {
-    width: calc(100% - 100px);
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #000000;
-    text-align: left;
-  }
-  
-  .subscribe-button {
-<<<<<<< HEAD
-    width: calc(100% - 100px);
-=======
-    width: calc(100% - 84px);
->>>>>>> newsletter
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #000000;
-    color: #fff;
-    border: none;
+    }
+/* krydset styling */
+    .close-popup{
+      place-self: end;
+      border:none;
+      background-color: transparent;
+    font-size: 2.5rem;
     cursor: pointer;
-    text-align: left;
-    
+    }
+
+  h2{
+    font-weight: 700;
+  }
+
+  #newsletter-form{
+    display: flex;
+    flex-direction: column;
+       gap: 0.5rem;
+  }
+/* Email*/
+  input{
+     padding: 1rem;
   }
   
-  .subscribe-button:hover {
-    background-color: #0056b3;
+/* subsrcibe*/
+  #newsletter-form button {
+    padding: 1rem;
+    background-color: black;
+    color:white;
   }
 
-  .logo_hand p {
-    text-align: center;
-  }
+  
 
+
+    .knap{
+      position: sticky;
+     display: flex;
+     justify-content: end;
+     
+      top: 50%;
+    }
+
+    .knap > button {
+      position: relative;
+
+transform: rotate(-90deg);
+border: solid black 2px;
+padding: 10px;
+background-color: white;
+cursor: pointer;
+font-size: 1rem;
+margin-right: -2rem;
+    }
 </style>
+
