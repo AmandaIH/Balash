@@ -8,7 +8,6 @@
     <button id="burger-menu" class="burger-menu" aria-label="Toggle navigation">
       <span></span>
       <span></span>
-      <span></span>
     </button>
   
     <!-- Overlay -->
@@ -58,15 +57,13 @@
   }
   
   .burger-menu.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(0.5rem) rotate(45deg);
   }
+  
+
   
   .burger-menu.open span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .burger-menu.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-0.5rem) rotate(-45deg);
   }
   
   /* Navigation menu styling */
