@@ -4,14 +4,13 @@ const {data} = Astro.props;
 
 ---
 
-
-
 <article>
     <img src=`/img/${data.img}` alt={data.place}>
     <header>
         <h3>{data.place}</h3>
         <p>{data.date}</p>
-        <p class="hover_info">{data.hover}</p>
+       <div class="hover_info"> <h2 class="overskrift">{data.overskrift}</h2>
+        <p>{data.hover}</p></div>
     </header>
 </article>
 
@@ -41,6 +40,7 @@ const {data} = Astro.props;
     display: flex; 
     border-radius: 0;
 }
+
     
     @media (min-width: 800px) {
     h3 {
@@ -55,6 +55,20 @@ const {data} = Astro.props;
     font-size: 15px;
     }
 
+    .overskrift{
+    width: 100%;
+    height: 100%;
+    color: black;
+    align-items: center;
+    padding: 5px;
+    border-radius: 0;
+    position: absolute;
+    font-size: 16px;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    pointer-events: none;   
+}
     .hover_info {
     display: none; 
     position: absolute;
@@ -91,6 +105,28 @@ const {data} = Astro.props;
     } 
 
 
+<<<<<<< HEAD
+=======
+    .hover_info {
+    display: none; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ECEDEF;
+    color: black;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    font-size: 13px;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    pointer-events: none;
+    }
+>>>>>>> social
     }
 
     @media (max-width: 500px) {
