@@ -3,24 +3,20 @@ import MainLayout from '../layouts/Mainlayout.astro';
 import "../css/global.css";
 import Firstfeature from '../components/Firstfeature.astro';
 
-
-import { ClientRouter } from 'astro:transitions';
-
-let showFirstfeature = true;
 ---
 <MainLayout>
-<ClientRouter />
-
-<div id="first-feature-container">
-    <Firstfeature />
-  </div>
+<Firstfeature />
 
 
 <section class="container">
-<video src="">VIDEO</video>
+	<video class="gryde" autoplay loop muted playsinline>
+		<source src="/video/forside_video_done.webm" type="video/webm">
+	  </video>	  
 <img class="drinks" src="/public/img_mobile/forside_drinks_mobile.webp" alt="Drinks">
+<div class="soho-container">
 <img class="soho" src="/public/img_mobile/forside_soho_mobile.webp" alt="På Soho">
-<p class="balashxsoho">BALASH X SOHO HOUSE</p>
+<h1 class="balashxsoho">BALASH X SOHO HOUSE</p>
+</div>
 <img class="suppe" src="/public/img_mobile/forside_suppe_mobile.webp" alt="En suppe">
 <img class="fisk" src="/public/img/forside_fish.webp" alt="Fisk">
 </div>
@@ -38,6 +34,25 @@ img {
 	.container {
 	margin: 13%;
 }
+
+video {
+	max-width: 100%;
+	margin-top: 0%;
+	margin-bottom: 5%;
+}
+.soho-container {
+    position: relative; 
+  }
+  .balashxsoho {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+    z-index: 1; 
+	white-space: nowrap;
+  }
 }
 
 @media (min-width: 501px) and (max-width: 799px){
@@ -49,7 +64,7 @@ flex-wrap: wrap;
 
 }
 
-.container img {
+.container img, .container video {
 	width: 100%;
 	max-width: 799px;
 	height: auto;
@@ -62,6 +77,19 @@ flex-wrap: wrap;
 	max-width: 799px;
 }
 
+.soho-container {
+    position: relative; 
+  }
+  .balashxsoho {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+    z-index: 1; 
+	white-space: nowrap;
+  }
 }
 
 @media (min-width: 800px) {
@@ -70,7 +98,7 @@ flex-wrap: wrap;
 	margin: 13%;
 	max-width: 1410px;
 }
-	.container img {
+	.container img, .container video {
         width: 100%; 
 		height: 100%;
         object-fit: cover; 
@@ -86,16 +114,28 @@ flex-wrap: wrap;
 	grid-row: 1;
 	object-fit: cover;
 }
+
+.soho-container {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    position: relative; 
+  }
 .soho {
 	grid-column: 1 / 3;
 	grid-row: 2;
 	object-fit: cover;
 }
 .balashxsoho {
-	grid-column: 1 / 3;
-	grid-row: 2;
-	object-fit: cover;
-}
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+    z-index: 1; 
+	white-space: nowrap;
+  }
+
 .suppe {
 	grid-column: 1 / 2;
 	grid-row: 3;
