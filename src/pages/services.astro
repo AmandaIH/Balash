@@ -4,15 +4,16 @@ import Mainlayout from '../layouts/Mainlayout.astro';
 
 <Mainlayout>
 <section class="textpic">
-<div class="text">
-<p>Balash til bordet</p>
+    <div class="service_balash_bord"><p>Balash til bordet</p></div>
+    <div class="img">
+        <img src="/public/img/service_metal_bowl.webp" alt="Skål med mad">
+        </div>
+    <div class="text">
 <p>Kontakt</p>
 <p>Email: <br> Balashaps@gmail.com</p>
 <p>Telefon:<br> +45 30 49 38 47</p>
 </div>
-<div class="img">
-<img src="/public/img/service_metal_bowl.webp" alt="Skål med mad">
-</div>
+
 </section>
 <section class="descriptive_text">
     <div class="one"><p>Hos Balash Events tilbyder vi skræddersyede madoplevelser, der passer til enhver anledning. Vores fokus er på at levere uforglemmelige events, hvor mad, vin og stemning går op i en højere enhed. Uanset om du planlægger en privatfest, et firmaarrangement eller ønsker at prøve en af vores populære pop-ups, sikrer vi, at din oplevelse bliver noget særligt.
@@ -26,7 +27,7 @@ import Mainlayout from '../layouts/Mainlayout.astro';
     <p class="text7">  Med en personlig og nærværende tilgang sørger vi for, at alle gæster føler sig velkomne. Vi vægter bæredygtighed højt ved at minimere madspild og samarbejde med lokale leverandører. Uanset om det er et intimt arrangement eller en større begivenhed!</p></div>
     <img class="food3" src="/public/img/service_info.webp" alt="Mad">
 </section>
-<section>
+<section class="service_menu_menu">
     <div class="menu_text">
     <h2>Aktuelle menuer. Nytår 2024</h2>
     <p>Vores nytårsmenuer 2024 er nu klar til bestilling. Kontakt os på balashaps@gmail.com og få Balash til bordet.</p>
@@ -46,18 +47,61 @@ import Mainlayout from '../layouts/Mainlayout.astro';
 </Mainlayout>
 
 <style>
+    
+    main {
+    margin-top: 0;
+    padding-top: 0;
+}
 
-img {
+    .textpic {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    padding-top: 0; /* Fjern ekstra indrykning */
+
+}
+
+.service_balash_bord{
+    margin-top: 0;
+    
+}
+    img {
     max-width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-.textpic {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.text{
+    margin-top: 10%;
+   
 }
+
+
+.descriptive_text{
+    gap: 1rem; /* Afstand mellem rækker og kolonner */
+    margin-top: 0;
+   
+}
+.one{
+    margin-top: 3%;
+    margin-bottom: 5%
+    
+}
+
+.two{
+    margin-bottom: 0;
+}
+
+.food3{
+
+}
+
+.service_menu_menu{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
 
 .menu_text {
   margin: 0;  
@@ -67,6 +111,9 @@ img {
 p {
    padding-bottom: 4%; 
 }
+
+
+
 
 @media (max-width: 799px) {
 .img_menu {
@@ -78,7 +125,7 @@ p {
 }
 
 .textpic, .descriptive_text, .menu_text, .img_menu {
-    margin: 13%;
+    margin: 5%;
 }
 
 .food3 {
@@ -92,6 +139,13 @@ p {
 }
 
 @media (min-width: 800px) {
+    
+    .textpic{
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0;
+
+    }
     .descriptive_text {
         display:grid;
         grid-template-columns: 1fr 1fr;
@@ -156,8 +210,9 @@ p {
         grid-row: 3;
     }
 
-    .textpic, .descriptive_text, .menu_text, .img_menu {
-    margin: 7%;
+    .textpic, .descriptive_text, .service_menu_menu, .menu_text, .img_menu {
+    margin-left: 7%;
+    margin-right: 7%;
 }
 }
 </style>
