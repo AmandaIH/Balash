@@ -30,7 +30,6 @@ import Mainlayout from '../layouts/Mainlayout.astro';
         </p>
         <p>– Emil, Bertram & Vincent</p>
       </div>
-   
     </section>
   </section>
 </Mainlayout>
@@ -47,12 +46,6 @@ import Mainlayout from '../layouts/Mainlayout.astro';
     gap: 20px;
   }
 
-  .text {
-    font-family: "Roboto Mono", monospace;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
   .space {
     margin-bottom: 20px;
   }
@@ -63,12 +56,12 @@ import Mainlayout from '../layouts/Mainlayout.astro';
     margin-top: 20px;
   }
 
+
   /* Desktop styling */
   @media (min-width: 800px) {
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr; 
-      align-items: center;
       gap: 2%;
     }
 
@@ -81,20 +74,17 @@ import Mainlayout from '../layouts/Mainlayout.astro';
     .img img {
       margin-top: 0; 
     }
-
-    /* KAN SLETTES NÅR GLOBAL CSS ER OPDATERET */
-      h1{
-    margin-bottom: 50px;
-    font-size: 24px;
-    font-weight: 350;
-  }
   }
 
-  /* Mobile styling */
-@media (max-width: 799px) {
-  .grid {
-    display: flex;
-    flex-direction: column-reverse; /* Bytter om på rækkefølgen */
+  /* Mobil styling */
+  @media (max-width: 799px) {
+    .grid {
+      display: flex;
+      flex-direction: column-reverse; 
+    }
+
+    .space {
+      margin-bottom: 15px; /* Reducer afstand mellem afsnit */
+    }
   }
-}
 </style>
