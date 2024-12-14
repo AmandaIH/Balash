@@ -7,8 +7,10 @@ const {data} = Astro.props;
 <article>
     <img src=`/img/${data.img}` alt={data.place}>
     <header>
+        <div class="header_text">
         <h3>{data.place}</h3>
         <p>{data.date}</p>
+        </div>
 
         <button class="hover_button">
             <span class="hover_text">LÆS MERE</span>
@@ -41,8 +43,16 @@ const {data} = Astro.props;
         flex-direction: column;
     }
 
+    .header_text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
 .hover_button {
         display: none; 
+        width: 100%;
         margin-top: 10px;
         padding: 5px;
         background-color: black;
