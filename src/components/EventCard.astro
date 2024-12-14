@@ -9,6 +9,11 @@ const {data} = Astro.props;
     <header>
         <h3>{data.place}</h3>
         <p>{data.date}</p>
+
+        <button class="hover_button">
+            <span class="hover_text">LÆS MERE</span>
+        </button>
+
        <div class="hover_info"> <h2 class="overskrift">{data.overskrift}</h2>
         <p>{data.hover}</p></div>
     </header>
@@ -33,16 +38,56 @@ const {data} = Astro.props;
     header {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
     }
 
+.hover_button {
+        display: none; 
+        margin-top: 10px;
+        padding: 5px;
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+    }
 
+    .hover_info {
+        display: none; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ECEDEF;
+        color: black;
+        align-items: center;
+        padding: 5px;
+        font-size: 13px;
+        justify-content: center;
+        text-align: center;
+        z-index: 1;
+        pointer-events: none;
+        flex-direction: column;
+    }
+    
+    @media (min-width: 800px) {
+    
     article:hover .hover_info {
     display: flex; 
     border-radius: 0;
+    pointer-events: auto;
 }
 
+    .hover-button {
+    display: none; 
+    }
+
+    .hover_info {
+    display: none; 
+    }
     
-    @media (min-width: 800px) {
     h3 {
     font-family: "Roboto Mono", monospace;
     font-style: normal;
@@ -57,14 +102,10 @@ const {data} = Astro.props;
 
     .overskrift{
     color: black;
-    border-radius: 0;
-    font-size: 16px;
     text-align: center;
-    z-index: 1;
-    pointer-events: none;   
+    z-index: 1; 
+    margin-bottom: 10px;
 }
-
-
     .hover_info {
     display: none; 
     top: 0;
@@ -82,12 +123,18 @@ const {data} = Astro.props;
     text-align: center;
     z-index: 1;
     pointer-events: none;
+    flex-direction: column;
     }
 
     }
 
     @media (min-width: 501px) and (max-width: 799px) {
-        h3 {
+        
+    .hover_button {
+    display: block; 
+    }
+
+    h3 {
     font-family: "Roboto Mono", monospace;
     font-style: normal;
     font-size: 17px;
@@ -99,32 +146,18 @@ const {data} = Astro.props;
     font-size: 13px;
     } 
 
-<<<<<<< HEAD
-
     .hover_info {
-    display: none; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ECEDEF;
-    color: black;
-    align-items: center;
-    padding: 5px;
-    border-radius: 5px;
-    position: absolute;
-    font-size: 13px;
-    justify-content: center;
-    text-align: center;
-    z-index: 1;
-    pointer-events: none;
+        display: none;
     }
-=======
->>>>>>> billederækkefølge
+
     }
 
     @media (max-width: 500px) {
+    
+    .hover_button {
+    display: block; 
+    }
+    
     h3 {
     font-family: "Roboto Mono", monospace;
     font-style: normal;
@@ -137,6 +170,9 @@ const {data} = Astro.props;
     font-size: 9px;
     } 
 
+    .hover_info {
+    display: none;
+    }
 
     }
 </style>
@@ -144,19 +180,27 @@ const {data} = Astro.props;
 
 document.querySelectorAll("article").forEach((article) => {
     const hoverInfo = article.querySelector(".hover_info");
+    const hoverButton = article.querySelector(".hover_button");
+    const hoverText = hoverButton.querySelector(".hover_text");
+    const hoverParagraph = hoverInfo.querySelector("p"); 
+
+    hoverButton.addEventListener("click", () => {
+        hoverInfo.classList.toggle("open"); 
+
+        if (hoverInfo.classList.contains("open")) {
+            hoverInfo.style.display = "flex"; 
+            hoverButton.querySelector(".hover_text").textContent = "LUK";
+        } else {
+            hoverInfo.style.display = "none"; 
+            hoverButton.querySelector(".hover_text").textContent = "LÆS MERE"; 
+        }
+    });
 
     article.addEventListener("mouseenter", async () => {
         const hoverData = await fetchHoverData(); 
-        hoverInfo.textContent = hoverData;
+        hoverParagraph.textContent = hoverData;
     });
 });
-
-
-async function fetchHoverData() {
-    const response = await fetch("/api/get-hover-data"); 
-    const data = await response.json();
-    return data.hover; 
-}
 
 
 </script>
