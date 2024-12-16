@@ -4,7 +4,7 @@ import Mainlayout from '../layouts/Mainlayout.astro';
 
 <Mainlayout>
 <section class="textpic">
-    <div class="service_balash_bord"><p>Balash til bordet</p></div>
+    <div class="service_balash_bord"><h1>Balash til bordet</h1></div>
     <div class="img">
         <img src="/public/img/service_metal_bowl.webp" alt="Skål med mad">
         </div>
@@ -84,8 +84,7 @@ import Mainlayout from '../layouts/Mainlayout.astro';
 }
 .one{
     margin-top: 3%;
-    margin-bottom: 5%
-    
+    margin-bottom: 0 !important;   
 }
 
 .two{
@@ -141,15 +140,29 @@ p {
 @media (min-width: 800px) {
     
     .textpic{
-        display: grid;
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr; 
     grid-template-columns: 1fr 1fr;
     margin-top: 0;
-
     }
+    .service_balash_bord {
+    grid-row: 1;
+    grid-column: 1 / 2;
+    }
+    .text {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    }
+
+    .img {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+    }
+    
     .descriptive_text {
         display:grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0.5fr 1fr;
+        grid-template-rows: 0.25fr 1fr;
     }
     .one {
         grid-column: 2 / 3;
