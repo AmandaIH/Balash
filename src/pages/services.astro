@@ -9,27 +9,22 @@ import Mainlayout from '../layouts/Mainlayout.astro';
         <img src="/public/img/service_metal_bowl.webp" alt="Skål med mad">
         </div>
     <div class="text">
-<p class="kontakt">Kontakt</p>
+<p>Kontakt</p>
 <p>Email: Balashaps@gmail.com</p>
 <p>Telefon: +45 30 49 38 47</p>
 </div>
-
 </section>
+
 <section class="descriptive_text">
     <div class="one"><p>Hos Balash Events tilbyder vi skræddersyede madoplevelser, der passer til enhver anledning. Vores fokus er på at levere uforglemmelige events, hvor mad, vin og stemning går op i en højere enhed. Uanset om du planlægger en privatfest, et firmaarrangement eller ønsker at prøve en af vores populære pop-ups, sikrer vi, at din oplevelse bliver noget særligt.
     </p></div> 
-<div class="two">
-    <div class="service_includes">
-    <p class="text1"> Vores services inkluderer: </p>
-    <p class="text2">Catering til privaten samt virksomheder. Vi leverer tilpassede menuer, der spænder fra budgetvenlige løsninger til eksklusive madoplevelser. Hver menu designes med fokus på sæsonens råvarer og dine specifikke ønsker. Vi klarer alt fra intime middage til større events – altid med kvalitet og god service i centrum.</p>
-    </div>
-    <div class="pop_up_events">
-    <p class="text5">Pop-up-events.</p><p class="text6">Vores signaturkoncept, hvor vi bringer “Balash“ ud til nye steder.</p>
-    </div>
-    <div class="own_food_experience">
-    <p class="text3">Skræddersyede madoplevelser. </p> 
-    <p class="text4">Har du en særlig anledning eller en idé? Vi tilpasser os dit budget og dine behov, samtidig med at vi skaber sæsonbaserede menuer med omtanke for råvarerne.</p>
-    <p class="text7">Med en personlig og nærværende tilgang sørger vi for, at alle gæster føler sig velkomne. Vi vægter bæredygtighed højt ved at minimere madspild og samarbejde med lokale leverandører. Uanset om det er et intimt arrangement eller en større begivenhed!</p>
+    <div class="two">
+    <p> Vores services inkluderer: </p>
+    <p>Catering til privaten samt virksomheder. Vi leverer tilpassede menuer, der spænder fra budgetvenlige løsninger til eksklusive madoplevelser. Hver menu designes med fokus på sæsonens råvarer og dine specifikke ønsker. Vi klarer alt fra intime middage til større events – altid med kvalitet og god service i centrum.</p>
+    <p>Pop-up-events.</p><p>Vores signaturkoncept, hvor vi bringer “Balash“ ud til nye steder.</p>
+    <p>Skræddersyede madoplevelser. </p> 
+    <p>Har du en særlig anledning eller en idé? Vi tilpasser os dit budget og dine behov, samtidig med at vi skaber sæsonbaserede menuer med omtanke for råvarerne.</p>
+    <p>Med en personlig og nærværende tilgang sørger vi for, at alle gæster føler sig velkomne. Vi vægter bæredygtighed højt ved at minimere madspild og samarbejde med lokale leverandører. Uanset om det er et intimt arrangement eller en større begivenhed!</p>
     </div>
     
 </div>
@@ -37,7 +32,7 @@ import Mainlayout from '../layouts/Mainlayout.astro';
 </section>
 <section class="service_menu_menu">
     <div class="menu_text">
-    <p class="new_year_menu">Aktuelle menuer. Nytår 2024</p>
+    <p>Aktuelle menuer. Nytår 2024</p>
     <p>Vores nytårsmenuer 2024 er nu klar til bestilling. Kontakt os på balashaps@gmail.com og få Balash til bordet.</p>
     </div>
     <div class="img_menu">
@@ -61,64 +56,14 @@ import Mainlayout from '../layouts/Mainlayout.astro';
     padding-top: 0;
 }
 
-    .textpic {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-top: 0;
-    padding-top: 0; /* Fjern ekstra indrykning */
-
-}
-
-.service_balash_bord p {
-    font-size: large;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 2%;
-}
     img {
-    max-width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.text{
-    margin-top: 2%;
-    margin-bottom: 7%%;
-   
-}
-
-.kontakt{
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.descriptive_text{
-    
-    margin-top: 5px;
-    margin-bottom: -5%;
-   
-}
-.one{
+    .one{
     margin-top: 3%;
     margin-bottom: 0 !important;   
-}
-
-.text1{
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-}
-.text3{ 
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-}
-
- .text5{
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
 }
 
 .service_includes{
@@ -147,12 +92,6 @@ margin-bottom: 2%;
     margin-bottom: 7%;
 }
 
-.new_year_menu
-{
-    font-size: large;
-    font-weight: 400;
-    font-style: normal;
-}
 
 
 
@@ -183,28 +122,37 @@ margin-bottom: 2%;
 
 @media (min-width: 800px) {
     main {
-        margin-bottom: 5%;
+    margin-bottom: 5%;
     }
 
     .textpic{
     display: grid;
-    grid-template-rows: 0.5fr 0.5fr; 
+    grid-template-rows: 0.5fr 0.25fr; 
     grid-template-columns: 1fr 1fr;
-    
-    margin-top: 0;
+    margin: 0;
+    padding: 0;
+
     }
     .service_balash_bord {
     grid-row: 1;
     grid-column: 1 / 2;
+    margin: 0;
+    padding: 0;
     }
     .text {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+    margin: 0;
+    padding: 0;
+    align-items: start;
     }
 
     .img {
     grid-row: 1 / 3;
     grid-column: 2 / 3;
+    display: block;
+    margin: 0;
+    padding: 0;
     }
     
     .descriptive_text {
@@ -213,18 +161,6 @@ margin-bottom: 2%;
         grid-template-rows: 0.25fr 1fr;
     }
 
-.one p {
-    font-size: 20px;
-    width: 100%;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    
-}
-
-.two p {
-    max-width: 85%;
-    font-size: 20px;
-}
 .service_includes {
     margin-bottom: 2%;
 }
@@ -234,19 +170,6 @@ margin-bottom: 2%;
 
 .text7{
     margin-top: 2%;
-}
-
-    .service_menu_menu {
-margin-bottom: 7%;
-margin-top: -2%;
-    }
-
-.new_year_menu p {
-    font-size: 28px;
-}
-
-.menu_text p {
-font-size: 20px;
 }
 
     .one {
@@ -310,7 +233,7 @@ font-size: 20px;
 
     .textpic, .descriptive_text, .menu_text, .img_menu {
     margin-left: 7%;
-    margin-right: 7%;
+    margin-right: 7%
 }
 }
 </style>
