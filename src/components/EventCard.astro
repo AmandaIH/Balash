@@ -189,27 +189,31 @@ const {data} = Astro.props;
 <script>
 
 document.querySelectorAll("article").forEach((article) => {
-    const hoverInfo = article.querySelector(".hover_info");
-    const hoverButton = article.querySelector(".hover_button");
+    const hoverInfo = article.querySelector(".hover_info")! as HTMLElement;
+    const hoverButton = article.querySelector(".hover_button")!;
     const hoverText = hoverButton.querySelector(".hover_text");
-    const hoverParagraph = hoverInfo.querySelector("p"); 
+    // const hoverParagraph = hoverInfo.querySelector("p"); 
 
     hoverButton.addEventListener("click", () => {
+        const hoverText = hoverButton.querySelector(".hover_text");
+        if (!hoverText) {
+            return;
+        }
         hoverInfo.classList.toggle("open"); 
 
         if (hoverInfo.classList.contains("open")) {
-            hoverInfo.style.display = "flex"; 
-            hoverText.textContent = "LUK";
+            hoverInfo.style.display = "flex";   
+            hoverText.textContent = "LUK"; 
         } else {
             hoverInfo.style.display = "none"; 
-            hoverButton.querySelector(".hover_text").textContent = "LÆS MERE"; 
+            hoverText.textContent = "LÆS MERE"; 
         }
     });
 
-    article.addEventListener("mouseenter", async () => {
-        const hoverData = await fetchHoverData(); 
-        hoverParagraph.textContent = hoverData;
-    });
+    // article.addEventListener("mouseenter", async () => {
+    //     const hoverData = await fetchHoverData(); 
+    //     hoverParagraph.textContent = hoverData;
+    // });
 });
 
 
