@@ -1,18 +1,14 @@
 <header>
-    <!-- Logo -->
     <a href="/">
       <img src="/logo/logo_sort.svg" alt="Logo" class="logo">
     </a>
-  
     <!-- Burger menu -->
     <button id="burger-menu" class="burger-menu" aria-label="Toggle navigation">
       <span></span>
       <span></span>
     </button>
-  
     <!-- Overlay -->
     <div id="menu-overlay"></div>
-  
     <!-- Navigation -->
     <ul class="nav-items">
       <li><a class="about" href="/about/">ABOUT</a></li>
@@ -30,12 +26,9 @@
     padding: 2%;
     position: relative;
   }
-  
-  /* Logo styling */
   .logo {
     width: 10rem;
   }
-  
   /* Burger menu styling */
   .burger-menu {
     display: none;
@@ -47,9 +40,7 @@
     cursor: pointer;
     z-index: 1100;
     padding: 0;
-
   }
-  
   .burger-menu span {
     display: block;
     width: 2rem;
@@ -61,7 +52,6 @@
     position: relative;
     margin: 0;
   }
-  
   .burger-menu.open span:nth-child(1) {
     transform: translateY(0.45rem) rotate(45deg);
   }
@@ -69,33 +59,26 @@
   .burger-menu.open span:nth-child(2) {
     transform: translateY(-50%) rotate(-45deg);
   }
-  
   /* Navigation menu styling */
   .nav-items {
     display: flex;
     flex-direction: row;
     list-style: none;
     gap: 2.5rem;
-    
-  }
-  
+  } 
   .nav-items a {
     color: black;
     text-decoration: none;
     font-family: "Roboto Mono", monospace;
     font-size: 1.5rem;
   }
-  
   .nav-items a:hover {
     text-decoration: underline;
   }
-  
-  /* Mobile styles */
-  @media (max-width: 799px) {
+    @media (max-width: 799px) {
     .burger-menu {
       display: flex;
     }
-  
     .nav-items {
       display: none;
       flex-direction: column;
@@ -114,12 +97,10 @@
       z-index: 1000;
       padding-top: 4rem;
     }
-  
     .nav-items.active {
       display: flex;
       transform: translateX(0);
     }
-  
     #menu-overlay {
       display: none;
       position: fixed;
@@ -132,7 +113,6 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-  
     #menu-overlay.active {
       display: block;
       opacity: 1;
@@ -141,7 +121,6 @@
   </style>
   
   <script>
-  // JavaScript for burger menu functionality
   document.addEventListener("DOMContentLoaded", () => {
     const burgerMenu = document.querySelector("#burger-menu");
     const navItems = document.querySelector(".nav-items");
