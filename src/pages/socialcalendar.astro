@@ -9,7 +9,6 @@ const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/socia
     }
 }).then(res=>res.json());
 ---
-
 <MainLayout> 
     <h1>Tidligere events</h1>
     <section>
@@ -19,47 +18,39 @@ const data = await fetch("https://skyynjazjdyqpnjbrbgh.supabase.co/rest/v1/socia
         })
     }
         </ul>
-        
-
         <p> Tilmeld dig vores nyhedsbrev <a class="link" href="./components/Newsletterbox"> her</a> og vær first in line når vi sender nyt om næste spændende pop-up fra Balash.</p>
     </section>
 </MainLayout>
-
 <style>
-
-    ul {
-        display: grid;
-        gap: 1rem;
-    }
-
-    p {
-        padding-top: 3rem;
-    }
-
-    a {
+ul {
+display: grid;
+gap: 1rem;
+}
+p {
+padding-top: 3rem;
+}
+a {
 color: black;
 cursor: pointer;
 font: 700;
-    }
-    @media (max-width: 799px) {
-        ul {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (min-width: 800px) {
-        ul {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    section{
-      margin: 10%;  
-    }
-
-    h1 {
-    margin-left: 10%;
-    margin-top: 5%;
-    }
+}
+@media (max-width: 799px) {
+ul {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+ @media (min-width: 800px) {
+ul {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+section{
+margin: 10%;  
+}
+h1 {
+margin-left: 10%;
+margin-top: 5%;
+}
 </style>
 
 

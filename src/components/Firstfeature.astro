@@ -1,13 +1,22 @@
+---
+// @ts-nocheck
+---
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 <dotlottie-player id="bike_ani" src="https://lottie.host/653554e1-0490-4edd-a46e-d9ea4868c4c6/k9UDBf0iUP.lottie" background="transparent" speed="1" style="width: 100%; height: 95vh"  autoplay></dotlottie-player>
-
 <script>
-let bike = document.getElementById("bike_ani");
-bike.addEventListener("complete",bikerideEnded);
+document.addEventListener('DOMContentLoaded', () => {
+    const bike = document.getElementById('bike_ani');
+    if (bike) {
+        bike.addEventListener('load', () => {
+            console.log('dotlottie-player loaded');
+            bike.addEventListener('complete', bikerideEnded);
+        });
+    }
 
+    function bikerideEnded() {
+        console.log('Bike ride ended');
+        bike!.style.display = 'none';
+    }
+});
 
-function bikerideEnded() {
-    console.log("Bike ride ended");
-    bike.style.display="none";
-}
 </script>

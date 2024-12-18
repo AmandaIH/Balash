@@ -2,23 +2,18 @@
     <a href="/">
       <img src="/logo/logo_sort.svg" alt="Logo" class="logo">
     </a>
-    <!-- Burger menu -->
     <button id="burger-menu" class="burger-menu" aria-label="Toggle navigation">
       <span></span>
       <span></span>
     </button>
-    <!-- Overlay -->
     <div id="menu-overlay"></div>
-    <!-- Navigation -->
     <ul class="nav-items">
       <li><a class="about" href="/about/">ABOUT</a></li>
       <li><a class="services" href="/services/">SERVICES</a></li>
       <li><a class="social" href="/socialcalendar/">SOCIAL CALENDAR</a></li>
     </ul>
   </header>
-  
   <style>
-  /* Header styling */
   header {
     display: flex;
     justify-content: space-between;
@@ -29,7 +24,6 @@
   .logo {
     width: 10rem;
   }
-  /* Burger menu styling */
   .burger-menu {
     display: none;
     flex-direction: column;
@@ -55,7 +49,6 @@
   .burger-menu.open span:nth-child(1) {
     transform: translateY(0.45rem) rotate(45deg);
   }
-  
   .burger-menu.open span:nth-child(2) {
     transform: translateY(-50%) rotate(-45deg);
   }
@@ -119,7 +112,6 @@
     }
   }
   </style>
-  
   <script>
   document.addEventListener("DOMContentLoaded", () => {
     const burgerMenu = document.querySelector("#burger-menu");
@@ -143,4 +135,3 @@
     }
   });
   </script>
-  

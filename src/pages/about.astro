@@ -1,86 +1,77 @@
 ---
 import Mainlayout from '../layouts/Mainlayout.astro';
 ---
-
 <Mainlayout>
   <section class="body">
     <section class="grid">
-        <div class="img">
+      <div class="img">
         <img src="/img_mobile/about_mobile.webp" alt="Emil & Bertram">
       </div>
       <div class="text">
-        <h1>About</h1>
-        <p class="space">
-          Balash Event startede som en spontan idé mellem vennerne Bertram, Emil og Vincent, der kender hinanden fra restaurationsbranchen.
-        </p>
-        <p class="space">
-          Emil er kokken bag, Bertram er ekspert i vin samt service og Vincent har års erfaring med eksekvering af events.
-        </p>
-        <p class="space">
-          Hvad der begyndte som et enkelt pop-up-arrangement på Pio Vin, har nu udviklet sig til et eventfirma, der kombinerer gastronomisk kreativitet, nærvær og uforglemmelige oplevelser. 
-        </p>
-        <p class="space">
-          Vores navn, Balash, stammer fra arabisk og betyder "dyden af at give uden at forvente noget til gengæld."
-        </p>
-        <p class="space">
-          Selvom vores madoplevelser ikke er gratis, handler vores filosofi om generøsitet, glæde og at skabe øjeblikke, der føles som små gaver til vores gæster.
-        </p>
-        <p class="space">
-          Vi er drevet af passionen for sæsonbaserede råvarer, og det personlige touch, der gør enhver middag, pop-up event eller cateringoplevelse unik. Fra det intime middagsselskab til de store firmaarrangementer – sikrer vi, at hvert øjeblik bliver præget af høj kvalitet, god stemning og selvfølgelig en smule balash.
-        </p>
-        <p>– Emil, Bertram & Vincent</p>
+      <h1>About</h1>
+      <p class="space">
+        Balash Event startede som en spontan idé mellem vennerne Bertram, Emil og Vincent, der kender hinanden fra restaurationsbranchen.
+      </p>
+      <p class="space">
+        Emil er kokken bag, Bertram er ekspert i vin samt service og Vincent har års erfaring med eksekvering af events.
+      </p>
+      <p class="space">
+        Hvad der begyndte som et enkelt pop-up-arrangement på Pio Vin, har nu udviklet sig til et eventfirma, der kombinerer gastronomisk kreativitet, nærvær og uforglemmelige oplevelser. 
+      </p>
+      <p class="space">
+        Vores navn, Balash, stammer fra arabisk og betyder "dyden af at give uden at forvente noget til gengæld."
+      </p>
+      <p class="space">
+        Selvom vores madoplevelser ikke er gratis, handler vores filosofi om generøsitet, glæde og at skabe øjeblikke, der føles som små gaver til vores gæster.
+      </p>
+      <p class="space">
+        Vi er drevet af passionen for sæsonbaserede råvarer, og det personlige touch, der gør enhver middag, pop-up event eller cateringoplevelse unik. Fra det intime middagsselskab til de store firmaarrangementer – sikrer vi, at hvert øjeblik bliver præget af høj kvalitet, god stemning og selvfølgelig en smule balash.
+      </p>
+      <p>– Emil, Bertram & Vincent</p>
       </div>
     </section>
   </section>
 </Mainlayout>
-
 <style>
   .body {
     margin: 8%;
     margin-top: 5%;
   }
-
   .content {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-
   .space {
     margin-bottom: 20px;
   }
-
   .img img {
     width: 100%;
     height: auto;
     margin-top: 20px;
   }
-
   @media (min-width: 800px) {
     .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr; 
-      gap: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2%;
     }
-
     .text {
-      text-align: left; 
-      place-self: end;
-      margin-left: 15px;
+    text-align: left; 
+    place-self: end;
+    margin-left: 15px;
     }
-
     .img img {
-      margin-top: 0; 
+    margin-top: 0; 
     }
   }
   @media (max-width: 799px) {
     .grid {
-      display: flex;
-      flex-direction: column-reverse; 
+    display: flex;
+    flex-direction: column-reverse; 
     }
-
     .space {
-      margin-bottom: 15px; 
+    margin-bottom: 15px; 
     }
   }
 </style>
